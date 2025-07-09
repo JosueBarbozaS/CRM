@@ -1,0 +1,204 @@
+﻿@model IngeTechCRM.Models.MovimientoInventario
+@{
+    ViewData["Title"] = "Registrar Movimiento de Inventario";
+    // Usar este cast directamente
+    var productos = (List<SelectListItem>)ViewBag.Productos;
+    var almacenes = (List<SelectListItem>)ViewBag.Almacenes;
+    var tiposMovimiento = (List<SelectListItem>)ViewBag.TiposMovimiento;
+}
+
+<div class="container mx-auto px-4 py-6">
+    <div class="mb-6 flex items-center justify-between">
+        <h1 class="text-2xl font-bold text-gray-800 md:text-3xl">Registrar Movimiento de Inventario</h1>
+        <div class="flex space-x-2">
+            <a href="@Url.Action("Index")" class="flex items-center rounded-lg bg-gray-100 px-4 py-2 font-medium text-gray-700 transition hover:bg-gray-200">
+                <i class="fas fa-arrow-left mr-2"></i> Volver
+            </a>
+            <a href="@Url.Action("Movimientos")" class="flex items-center rounded-lg bg-blue-100 px-4 py-2 font-medium text-blue-700 transition hover:bg-blue-200">
+                <i class="fas fa-history mr-2"></i> Ver Historial
+            </a>
+        </div>
+    </div>
+
+    <div class="overflow-hidden rounded-xl bg-white shadow-lg">
+        <div class="bg-gradient-to-r from-indigo-600 to-blue-500 px-4 py-3 text-white">
+            <h2 class="flex items-center font-bold">
+                <i class="fas fa-exchange-alt mr-2"></i> Formulario de Movimiento
+            </h2>
+        </div>
+        <div class="p-6">
+            @if (!string.IsNullOrEmpty(ViewBag.Message))
+            {
+                <div class="mb-4 rounded-lg bg-red-100 p-4 text-red-700">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm">@ViewBag.Message</p>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <!-- Contenedor para mensajes de validación dinámicos -->
+            <div id="validationAlert" class="mb-4 hidden rounded-lg border-l-4 p-4 transition-all duration-300">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <i id="validationIcon" class="text-lg"></i>
+                    </div>
+                    <div class="ml-3">
+                        <p id="validationMessage" class="text-sm font-medium"></p>
+                    </div>
+                    <div class="ml-auto pl-3">
+                        <button type="button" onclick="hideValidationAlert()" class="inline-flex rounded-md p-1.5 focus:outline-none focus:ring-2 focus:ring-offset-2">
+                            <i class="fas fa-times text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <form asp-action="RegistrarMovimiento" method="post">
+                @Html.AntiForgeryToken()
+                <div asp-validation-summary="ModelOnly" class="mb-4 rounded-lg bg-red-100 p-4 text-red-700"></div>
+
+                <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+                    <div class="space-y-4">
+                        <div>
+                            <label asp-for="ID_PRODUCTO" class="mb-1 block text-sm font-medium text-gray-700">Producto</label>
+                            <select asp-for="ID_PRODUCTO"
+                                    asp-items="productos"
+                                    class="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500"
+                                    id="productoSelect">
+                                <option value="">Seleccione un producto</option>
+                            </select>
+                            <span asp-validation-for="ID_PRODUCTO" class="mt-1 text-sm text-red-600"></span>
+                        </div>
+
+                        <div>
+                            <label asp-for="ID_ALMACEN" class="mb-1 block text-sm font-medium text-gray-700">Almacén</label>
+                            <select asp-for="ID_ALMACEN"
+                                    asp-items="almacenes"
+                                    class="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500"
+                                    id="almacenSelect">
+                                <option value="">Seleccione un almacén</option>
+                            </select>
+                            <span asp-validation-for="ID_ALMACEN" class="mt-1 text-sm text-red-600"></span>
+                        </div>
+
+                        <div>
+                            <label asp-for="TIPO_MOVIMIENTO" class="mb-1 block text-sm font-medium text-gray-700">Tipo de Movimiento</label>
+                            <select asp-for="TIPO_MOVIMIENTO"
+                                    asp-items="tiposMovimiento"
+                                    class="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500"
+                                    id="tipoMovimientoSelect">
+                                <option value="">Seleccione un tipo</option>
+                            </select>
+                            <span asp-validation-for="TIPO_MOVIMIENTO" class="mt-1 text-sm text-red-600"></span>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <label asp-for="CANTIDAD" class="mb-1 block text-sm font-medium text-gray-700">Cantidad</label>
+                            <input asp-for="CANTIDAD"
+                                   type="number"
+                                   step="1"
+                                   value="1"
+                                   class="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500"
+                                   id="cantidadInput">
+                            <span asp-validation-for="CANTIDAD" class="mt-1 text-sm text-red-600"></span>
+                            <span class="mt-1 text-xs text-gray-500" id="cantidadHelp">Solo números enteros positivos</span>
+                            <div id="stockActualContainer" class="mt-1 hidden">
+                                <span class="text-xs text-gray-500">Stock actual: <span id="stockActual" class="font-medium">0</span> unidades</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label asp-for="OBSERVACION" class="mb-1 block text-sm font-medium text-gray-700">Observación</label>
+                            <textarea asp-for="OBSERVACION"
+                                      rows="3"
+                                      class="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500"
+                                      placeholder="Ingrese una descripción breve del motivo del movimiento"></textarea>
+                            <span asp-validation-for="OBSERVACION" class="mt-1 text-sm text-red-600"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Información Según Tipo de Movimiento -->
+                <div class="mt-6 hidden rounded-lg border border-gray-200 bg-gray-50 p-4" id="entradaInfo">
+                    <h3 class="text-sm font-medium text-gray-800">Información de Entrada de Stock</h3>
+                    <p class="mt-1 text-sm text-gray-600">
+                        Este movimiento agregará unidades al inventario. Si no existe un registro de inventario para este producto en este almacén, se creará uno nuevo automáticamente.
+                    </p>
+                </div>
+
+                <div class="mt-6 hidden rounded-lg border border-gray-200 bg-gray-50 p-4" id="salidaInfo">
+                    <h3 class="text-sm font-medium text-gray-800">Información de Salida de Stock</h3>
+                    <p class="mt-1 text-sm text-gray-600">
+                        Este movimiento reducirá unidades del inventario. Debe existir un registro de inventario previo con suficiente stock disponible.
+                    </p>
+                </div>
+
+                <div class="mt-6 hidden rounded-lg border border-gray-200 bg-gray-50 p-4" id="ajusteInfo">
+                    <h3 class="text-sm font-medium text-gray-800">Información de Ajuste de Stock</h3>
+                    <p class="mt-1 text-sm text-gray-600">
+                        Este tipo de movimiento permite realizar ajustes positivos o negativos en el inventario. Para reducir stock, ingrese un valor negativo en la cantidad (ej: -5).
+                    </p>
+                </div>
+
+                <div class="mt-6 flex justify-end space-x-3">
+                    <a href="@Url.Action("Index")" class="rounded-lg border border-gray-300 bg-white px-4 py-2 font-medium text-gray-700 shadow-sm hover:bg-gray-50">
+                        Cancelar
+                    </a>
+                    <button type="submit" class="rounded-lg bg-indigo-600 px-4 py-2 font-medium text-white shadow-sm hover:bg-indigo-700">
+                        Registrar Movimiento
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de confirmación (alternativa) -->
+<div id="confirmModal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+    <div class="flex min-h-screen items-end justify-center px-4 pb-20 pt-4 text-center sm:block sm:p-0">
+        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+        <span class="hidden sm:inline-block sm:h-screen sm:align-middle">&#8203;</span>
+        <div class="inline-block transform overflow-hidden rounded-lg bg-white text-left align-bottom shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:align-middle">
+            <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                <div class="sm:flex sm:items-start">
+                    <div class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full sm:mx-0 sm:h-10 sm:w-10" id="modalIconContainer">
+                        <i id="modalIcon" class="text-xl"></i>
+                    </div>
+                    <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                        <h3 class="text-lg font-medium leading-6 text-gray-900" id="modalTitle">Título</h3>
+                        <div class="mt-2">
+                            <p class="text-sm text-gray-500" id="modalMessage">Mensaje</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                <button type="button" class="inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm" onclick="closeModal()">
+                    Entendido
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <!-- Configurar URL para AJAX -->
+    <script>
+        // Configurar URL para el archivo JS externo
+        window.obtenerStockUrl = '@Url.Action("ObtenerStockActual", "Inventario")';
+    </script>
+
+
+    <!-- Incluir archivo JavaScript externo -->
+    <script src="~/js/registroMovInv.js"></script>
+}

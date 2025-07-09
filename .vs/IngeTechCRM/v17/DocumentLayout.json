@@ -1,0 +1,235 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jabs0\\OneDrive\\Desktop\\IngeTechCRM\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{28E12D77-38A4-ECF4-30A0-A437125491BF}|IngeTechCRM.csproj|c:\\users\\jabs0\\onedrive\\desktop\\ingetechcrm\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{28E12D77-38A4-ECF4-30A0-A437125491BF}|IngeTechCRM.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28E12D77-38A4-ECF4-30A0-A437125491BF}|IngeTechCRM.csproj|c:\\users\\jabs0\\onedrive\\desktop\\ingetechcrm\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{28E12D77-38A4-ECF4-30A0-A437125491BF}|IngeTechCRM.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28E12D77-38A4-ECF4-30A0-A437125491BF}|IngeTechCRM.csproj|c:\\users\\jabs0\\onedrive\\desktop\\ingetechcrm\\package-lock.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{28E12D77-38A4-ECF4-30A0-A437125491BF}|IngeTechCRM.csproj|solutionrelative:package-lock.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28E12D77-38A4-ECF4-30A0-A437125491BF}|IngeTechCRM.csproj|c:\\users\\jabs0\\onedrive\\desktop\\ingetechcrm\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{28E12D77-38A4-ECF4-30A0-A437125491BF}|IngeTechCRM.csproj|solutionrelative:package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28E12D77-38A4-ECF4-30A0-A437125491BF}|IngeTechCRM.csproj|c:\\users\\jabs0\\onedrive\\desktop\\ingetechcrm\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28E12D77-38A4-ECF4-30A0-A437125491BF}|IngeTechCRM.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28E12D77-38A4-ECF4-30A0-A437125491BF}|IngeTechCRM.csproj|c:\\users\\jabs0\\onedrive\\desktop\\ingetechcrm\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28E12D77-38A4-ECF4-30A0-A437125491BF}|IngeTechCRM.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28E12D77-38A4-ECF4-30A0-A437125491BF}|IngeTechCRM.csproj|c:\\users\\jabs0\\onedrive\\desktop\\ingetechcrm\\comunicadoprogramadoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28E12D77-38A4-ECF4-30A0-A437125491BF}|IngeTechCRM.csproj|solutionrelative:comunicadoprogramadoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28E12D77-38A4-ECF4-30A0-A437125491BF}|IngeTechCRM.csproj|c:\\users\\jabs0\\onedrive\\desktop\\ingetechcrm\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28E12D77-38A4-ECF4-30A0-A437125491BF}|IngeTechCRM.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 17,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{c9c0ae26-aa77-11d2-b3f0-0000f87570ee}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\jabs0\\OneDrive\\Desktop\\IngeTechCRM\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\jabs0\\OneDrive\\Desktop\\IngeTechCRM\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-09T22:31:04.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "package-lock.json",
+              "DocumentMoniker": "C:\\Users\\jabs0\\OneDrive\\Desktop\\IngeTechCRM\\package-lock.json",
+              "RelativeDocumentMoniker": "package-lock.json",
+              "ToolTip": "C:\\Users\\jabs0\\OneDrive\\Desktop\\IngeTechCRM\\package-lock.json",
+              "RelativeToolTip": "package-lock.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-09T22:30:48.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\jabs0\\OneDrive\\Desktop\\IngeTechCRM\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\jabs0\\OneDrive\\Desktop\\IngeTechCRM\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T22:29:19.785Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jabs0\\OneDrive\\Desktop\\IngeTechCRM\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\jabs0\\OneDrive\\Desktop\\IngeTechCRM\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T22:29:06.487Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ComunicadoProgramadoService.cs",
+              "DocumentMoniker": "C:\\Users\\jabs0\\OneDrive\\Desktop\\IngeTechCRM\\ComunicadoProgramadoService.cs",
+              "RelativeDocumentMoniker": "ComunicadoProgramadoService.cs",
+              "ToolTip": "C:\\Users\\jabs0\\OneDrive\\Desktop\\IngeTechCRM\\ComunicadoProgramadoService.cs",
+              "RelativeToolTip": "ComunicadoProgramadoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T22:28:52.089Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "package.json",
+              "DocumentMoniker": "C:\\Users\\jabs0\\OneDrive\\Desktop\\IngeTechCRM\\package.json",
+              "RelativeDocumentMoniker": "package.json",
+              "ToolTip": "C:\\Users\\jabs0\\OneDrive\\Desktop\\IngeTechCRM\\package.json",
+              "RelativeToolTip": "package.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-09T22:28:50.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\jabs0\\OneDrive\\Desktop\\IngeTechCRM\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\jabs0\\OneDrive\\Desktop\\IngeTechCRM\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-09T22:26:46.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\jabs0\\OneDrive\\Desktop\\IngeTechCRM\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\jabs0\\OneDrive\\Desktop\\IngeTechCRM\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T20:44:49.351Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 16,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

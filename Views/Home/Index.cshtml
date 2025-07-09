@@ -1,0 +1,405 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<!-- Hero Section with Enhanced Visuals -->
+<div class="relative overflow-hidden bg-gradient-to-br from-brand-blue to-blue-500 py-20 md:py-28">
+    <!-- Animated background pattern -->
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0 animate-pulse" style="background-image: radial-gradient(circle at 25% 25%, white 2px, transparent 2px), radial-gradient(circle at 75% 75%, white 2px, transparent 2px); background-size: 60px 60px;"></div>
+    </div>
+
+    <!-- Floating geometric shapes -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-1/4 left-1/4 w-32 h-32 bg-white/5 rounded-full blur-xl animate-pulse"></div>
+        <div class="absolute top-3/4 right-1/4 w-48 h-48 bg-purple-400/10 rounded-full blur-2xl animate-pulse" style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-1/4 left-1/3 w-24 h-24 bg-blue-400/10 rounded-full blur-xl animate-pulse" style="animation-delay: 0.5s;"></div>
+    </div>
+
+    <div class="container relative z-10 mx-auto px-4 text-white">
+        <div class="max-w-4xl">
+            <div class="inline-block px-4 py-2 mb-8 text-sm font-medium text-white bg-white/10 rounded-full backdrop-blur-sm">
+                ✨ Tu tienda de tecnología de confianza desde 2012
+            </div>
+            <h1 class="mb-6 text-5xl font-bold md:text-6xl lg:text-7xl">
+                IngeTech
+                <span class="font-light bg-gradient-to-r text-white bg-clip-text text-transparent">
+                    Tecnología para todos
+                </span>
+            </h1>
+            <p class="mb-6 text-xl text-blue-100 md:text-2xl">
+                Los mejores productos tecnológicos con envíos a todo Costa Rica
+            </p>
+            <p class="mb-12 text-lg text-blue-200 opacity-90 max-w-2xl">
+                Más de 10 años ofreciendo calidad, garantía y el mejor servicio al cliente en tecnología.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap gap-4">
+                <a href="@Url.Action("Catalogo")" class="inline-flex items-center px-8 py-4 text-brand-blue bg-white rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    <i class="fas fa-th-large mr-2"></i>
+                    Ver catálogo
+                </a>
+                <a href="@Url.Action("Contacto")" class="inline-flex items-center px-8 py-4 text-white border-2 border-white rounded-xl font-semibold hover:bg-white hover:text-brand-blue transition-all duration-300 backdrop-blur-sm">
+                    <i class="fas fa-headset mr-2"></i>
+                    Soporte técnico
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wave separator -->
+    <div class="absolute bottom-0 left-0 right-0">
+        <svg class="w-full h-auto" viewBox="0 0 1440 120" fill="none">
+            <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" fill="white" />
+        </svg>
+    </div>
+</div>
+
+<!-- Stats Section with Enhanced Cards -->
+<div class="relative py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-2 gap-8 lg:grid-cols-4">
+            <div class="text-center group cursor-pointer transform hover:scale-105 transition-all duration-300">
+                <div class="inline-flex items-center justify-center w-16 h-16 mb-4 bg-gradient-to-br from-brand-blue to-blue-600 rounded-2xl text-white shadow-lg">
+                    <i class="fas fa-users text-xl"></i>
+                </div>
+                <div class="text-4xl font-bold text-gray-900 mb-2 group-hover:text-brand-blue transition-colors duration-300">+10K</div>
+                <div class="text-sm text-gray-600">Clientes satisfechos</div>
+            </div>
+
+            <div class="text-center group cursor-pointer transform hover:scale-105 transition-all duration-300">
+                <div class="inline-flex items-center justify-center w-16 h-16 mb-4 bg-gradient-to-br from-brand-blue to-blue-600 rounded-2xl text-white shadow-lg">
+                    <i class="fas fa-laptop text-xl"></i>
+                </div>
+                <div class="text-4xl font-bold text-gray-900 mb-2 group-hover:text-brand-blue transition-colors duration-300">+5K</div>
+                <div class="text-sm text-gray-600">Productos disponibles</div>
+            </div>
+
+            <div class="text-center group cursor-pointer transform hover:scale-105 transition-all duration-300">
+                <div class="inline-flex items-center justify-center w-16 h-16 mb-4 bg-gradient-to-br from-brand-blue to-blue-600 rounded-2xl text-white shadow-lg">
+                    <i class="fas fa-truck text-xl"></i>
+                </div>
+                <div class="text-4xl font-bold text-gray-900 mb-2 group-hover:text-brand-blue transition-colors duration-300">7</div>
+                <div class="text-sm text-gray-600">Provincias</div>
+            </div>
+
+            <div class="text-center group cursor-pointer transform hover:scale-105 transition-all duration-300">
+                <div class="inline-flex items-center justify-center w-16 h-16 mb-4 bg-gradient-to-br from-brand-blue to-blue-600 rounded-2xl text-white shadow-lg">
+                    <i class="fas fa-headset text-xl"></i>
+                </div>
+                <div class="text-4xl font-bold text-gray-900 mb-2 group-hover:text-brand-blue transition-colors duration-300">24/7</div>
+                <div class="text-sm text-gray-600">Soporte técnico</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Featured Categories -->
+@if (ViewBag.CategoriasDestacadas != null && ViewBag.CategoriasDestacadas.Count > 0)
+{
+    <div class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 lg:text-5xl">Categorías destacadas</h2>
+                <p class="max-w-2xl mx-auto text-xl text-gray-600">
+                    Descubre nuestra amplia gama de productos organizados para facilitar tu búsqueda.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                @foreach (var categoria in ViewBag.CategoriasDestacadas)
+                {
+                    <div class="group relative overflow-hidden bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                        <div class="absolute inset-0 bg-gradient-to-br from-brand-blue to-blue-600 opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                        <div class="p-8">
+                            <div class="inline-flex items-center justify-center w-16 h-16 mb-6 bg-gradient-to-br from-brand-blue to-blue-600 rounded-2xl text-white">
+                                <i class="fas fa-laptop text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">@categoria.NOMBRE</h3>
+                            <p class="text-gray-700 leading-relaxed mb-6">
+                                @(string.IsNullOrEmpty(categoria.DESCRIPCION) ? "Descubre nuestros productos de esta categoría" : categoria.DESCRIPCION)
+                            </p>
+                            <a href="@Url.Action("Catalogo", new { categoriaId = categoria.ID_CATEGORIA })"
+                               class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-brand-blue to-blue-600 text-white rounded-xl font-semibold hover:from-brand-blue hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
+                                Ver productos
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
+
+<!-- Featured Products -->
+@if (ViewBag.ProductosDestacados != null && ViewBag.ProductosDestacados.Count > 0)
+{
+    <div class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 lg:text-5xl">Productos destacados</h2>
+                <p class="max-w-2xl mx-auto text-xl text-gray-600">
+                    Una selección de nuestros mejores productos con la mejor calidad y precio del mercado.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                @foreach (var producto in ViewBag.ProductosDestacados)
+                {
+                    <div class="group relative overflow-hidden bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                        @{
+                            var imagenProducto = producto.Imagenes != null && ((IEnumerable<dynamic>)producto.Imagenes).Any()
+                            ? ((IEnumerable<dynamic>)producto.Imagenes).FirstOrDefault()?.RUTA_IMAGEN
+                            : "/images/productos/default.png";
+                        }
+
+                        <div class="relative h-64 overflow-hidden bg-gradient-to-br from-gray-50 to-blue-50 p-4">
+                            <img src="@imagenProducto"
+                                 class="h-full w-full object-contain transition-transform duration-300 group-hover:scale-110"
+                                 alt="@producto.NOMBRE">
+
+                            <!-- Overlay with category and brand -->
+                            <div class="absolute top-4 left-4 right-4 flex justify-between">
+                                <span class="inline-block rounded-full bg-white/90 backdrop-blur-sm px-3 py-1 text-xs font-semibold text-blue-600">
+                                    @producto.Categoria.NOMBRE
+                                </span>
+                                <span class="inline-block rounded-full bg-white/90 backdrop-blur-sm px-3 py-1 text-xs font-semibold text-purple-600">
+                                    @producto.Marca.NOMBRE
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2">@producto.NOMBRE</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-2">
+                                @(producto.DESCRIPCION?.Length > 80 ? producto.DESCRIPCION.Substring(0, 80) + "..." : producto.DESCRIPCION)
+                            </p>
+
+                            <div class="flex items-center justify-between">
+                                <span class="text-2xl font-bold bg-gradient-to-r from-brand-blue to-blue-600 bg-clip-text text-transparent">
+                                    @producto.PRECIO.ToString("C2")
+                                </span>
+                                <div class="flex space-x-2">
+                                    <a href="@Url.Action("DetalleProducto", new { id = producto.ID_PRODUCTO })"
+                                       class="inline-flex items-center justify-center w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-600 transition-colors duration-300"
+                                       title="Ver detalles">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="@Url.Action("AgregarAlCarrito", new { idProducto = producto.ID_PRODUCTO })"
+                                       class="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-r from-brand-blue to-blue-600 hover:from-blue-600 hover:to-purple-700 rounded-full text-white transition-all duration-300 transform hover:scale-110"
+                                       title="Agregar al carrito">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="@Url.Action("Catalogo")"
+                   class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand-blue to-blue-600 text-white rounded-xl font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    Ver todos los productos
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+}
+
+<!-- Why Choose Us Section -->
+<div class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4 lg:text-5xl">¿Por qué elegirnos?</h2>
+            <p class="max-w-2xl mx-auto text-xl text-gray-600">
+                Nos destacamos por ofrecer el mejor servicio y calidad en todos nuestros productos.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div class="group relative overflow-hidden bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                <div class="absolute inset-0 bg-gradient-to-br from-brand-blue to-blue-600 opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                <div class="p-8">
+                    <div class="inline-flex items-center justify-center w-16 h-16 mb-6 bg-gradient-to-br from-brand-blue to-blue-600 rounded-2xl text-white">
+                        <i class="fas fa-truck text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Envíos a todo el país</h3>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Realizamos envíos a todas las provincias de Costa Rica con tiempos de entrega competitivos.
+                    </p>
+                    <a href="@Url.Action("Contacto")" class="inline-flex items-center text-brand-blue font-semibold hover:text-blue-700 transition-colors duration-300">
+                        Ver zonas de cobertura
+                        <i class="fas fa-chevron-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                <div class="absolute inset-0 bg-gradient-to-br from-emerald-600 to-teal-700 opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                <div class="p-8">
+                    <div class="inline-flex items-center justify-center w-16 h-16 mb-6 bg-gradient-to-br from-brand-blue to-blue-600 rounded-2xl text-white">
+                        <i class="fas fa-headset text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Soporte técnico 24/7</h3>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Equipo de técnicos especializados disponible para ayudarte con cualquier consulta.
+                    </p>
+                    <a href="@Url.Action("Contacto")" class="inline-flex items-center text-brand-blue font-semibold hover:text-emerald-700 transition-colors duration-300">
+                        Solicitar soporte
+                        <i class="fas fa-chevron-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                <div class="absolute inset-0 bg-gradient-to-br from-orange-600 to-red-700 opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                <div class="p-8">
+                    <div class="inline-flex items-center justify-center w-16 h-16 mb-6 bg-gradient-to-br from-brand-blue to-blue-600 rounded-2xl text-white">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Garantía completa</h3>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Todos nuestros productos cuentan con garantía del fabricante y servicio post-venta.
+                    </p>
+                    <a href="@Url.Action("About")" class="inline-flex items-center text-brand-blue font-semibold hover:text-brand-blue transition-colors duration-300">
+                        Más información
+                        <i class="fas fa-chevron-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Section -->
+<div class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="bg-gradient-to-r from-brand-blue to-blue-700 overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+                <!-- Contact Info -->
+                <div class="p-12 text-white">
+                    <h3 class="text-3xl font-bold mb-6">¿Tienes preguntas?</h3>
+                    <p class="text-xl text-blue-100 mb-8">
+                        Estamos aquí para ayudarte. Contáctanos y nos pondremos en contacto contigo.
+                    </p>
+
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-center">
+                            <div class="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-xl text-white mr-4 backdrop-blur-sm">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Dirección</h4>
+                                <p class="text-blue-200">Calle 1, Avenida Central, San José, Costa Rica</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-xl text-white mr-4 backdrop-blur-sm">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Teléfono</h4>
+                                <p class="text-blue-200">+506 2222-3333</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-xl text-white mr-4 backdrop-blur-sm">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Email</h4>
+                                <p class="text-blue-200">info@ingetech.cr</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="flex space-x-4">
+                        <a href="#" class="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-xl text-white hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-xl text-white hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-xl text-white hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="p-12 bg-gradient-to-r from-brand-blue to-blue-700 overflow-hidden">
+                    <h3 class="text-2xl font-bold text-white mb-6">Envíanos un mensaje</h3>
+                    <form action="@Url.Action("EnviarContacto")" method="post" class="space-y-6">
+                        <div>
+                            <label for="nombre" class="block text-sm font-medium text-blue-200 mb-2">Nombre completo</label>
+                            <input type="text"
+                                   id="nombre"
+                                   name="nombre"
+                                   class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent backdrop-blur-sm"
+                                   placeholder="Tu nombre"
+                                   required>
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-blue-200 mb-2">Correo electrónico</label>
+                            <input type="email"
+                                   id="email"
+                                   name="email"
+                                   class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent backdrop-blur-sm"
+                                   placeholder="tu@email.com"
+                                   required>
+                        </div>
+
+                        <div>
+                            <label for="mensaje" class="block text-sm font-medium text-blue-200 mb-2">Mensaje</label>
+                            <textarea rows="4"
+                                      id="mensaje"
+                                      name="mensaje"
+                                      class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent backdrop-blur-sm resize-none"
+                                      placeholder="¿Cómo podemos ayudarte?"
+                                      required></textarea>
+                        </div>
+
+                        <button type="submit"
+                                class="w-full px-6 py-3 bg-white text-blue-900 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            Enviar mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Final CTA -->
+<div class="relative py-20 bg-gradient-to-r from-brand-blue to-blue-700 overflow-hidden">
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="relative z-10 container mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold text-white mb-6 md:text-5xl">
+            ¿Listo para mejorar tu experiencia tecnológica?
+        </h2>
+        <p class="max-w-2xl mx-auto text-xl text-blue-100 mb-8">
+            Nuestro equipo de expertos está listo para ayudarte a encontrar los productos perfectos.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="@Url.Action("Catalogo")" class="inline-flex items-center px-8 py-4 bg-white text-brand-blue rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <i class="fas fa-shopping-cart mr-2"></i>
+                Comprar ahora
+            </a>
+            <a href="@Url.Action("Contacto")" class="inline-flex items-center px-8 py-4 border-2 border-white text-white rounded-xl font-semibold hover:bg-white hover:text-brand-blue transition-all duration-300 backdrop-blur-sm">
+                <i class="fas fa-headset mr-2"></i>
+                Hablar con un asesor
+            </a>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,227 @@
+﻿@model IngeTechCRM.Models.Carrito
+@{
+    ViewData["Title"] = "Mi Carrito";
+    var total = ViewBag.Total ?? 0.0m;
+    var carritoVacio = ViewBag.CarritoVacio ?? (Model?.Items == null || Model.Items.Count == 0);
+}
+
+<div class="container mx-auto px-4 py-6">
+    <h1 class="mb-6 text-[35px] font-bold text-gray-dark md:text-3xl">Mi Carrito de Compras</h1>
+
+    <!-- Contenido del carrito -->
+    <div class="mb-6 overflow-hidden rounded-xl bg-white shadow-lg">
+        <div class="bg-gradient-to-r from-brand-blue to-blue-500 px-4 py-3 text-white">
+            <h2 class="flex items-center font-bold">
+                <i class="fas fa-shopping-cart mr-2"></i> Artículos en el Carrito
+            </h2>
+        </div>
+
+        @if (carritoVacio)
+        {
+            <div class="p-6 text-center">
+                <div class="mb-4 flex justify-center">
+                    <div class="rounded-full bg-gray-light/30 p-6">
+                        <i class="fas fa-shopping-cart text-6xl text-gray-light/70"></i>
+                    </div>
+                </div>
+                <h3 class="mb-2 text-xl font-medium text-gray-dark">Tu carrito está vacío</h3>
+                <p class="mb-6 text-gray-light">Agrega productos al carrito para comenzar tu compra</p>
+                <a href="@Url.Action("Catalogo", "Home")" class="rounded-lg bg-brand-blue px-6 py-3 font-medium text-white shadow-md transition hover:bg-brand-blue/90">
+                    <i class="fas fa-shopping-basket mr-2"></i> Explorar Catálogo
+                </a>
+            </div>
+        }
+        else
+        {
+            <div class="p-6">
+                <form asp-action="ActualizarCarrito" method="post">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-light/30">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-light">
+                                        Producto
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-light">
+                                        Precio Unitario
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-light">
+                                        Cantidad
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-light">
+                                        Subtotal
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-center text-xs font-medium uppercase tracking-wider text-gray-light">
+                                        Acciones
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 bg-white">
+                                @foreach (var item in Model.Items)
+                                {
+                                    var subtotal = item.CANTIDAD * item.PRECIO_UNITARIO;
+                                    <tr>
+                                        <td class="px-6 py-4 text-sm">
+                                            <div class="flex items-center">
+                                                <div class="h-14 w-14 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                                    @{
+                                                        var imagenProducto = item.Producto.Imagenes != null && item.Producto.Imagenes.Count > 0
+                                                        ? item.Producto.Imagenes.First().RUTA_IMAGEN
+                                                        : "/images/productos/default.png";
+                                                    }
+                                                    <img src="@imagenProducto" alt="@item.Producto.NOMBRE" class="h-full w-full object-contain object-center p-1">
+                                                </div>
+                                                <div class="ml-4">
+                                                    <div class="text-sm font-medium text-gray-dark">@item.Producto.NOMBRE</div>
+                                                    <div class="text-xs text-gray-light">
+                                                        @item.Producto.Categoria.NOMBRE / @item.Producto.Marca.NOMBRE
+                                                    </div>
+                                                    <div class="text-xs text-gray-light">Código: @item.Producto.CODIGO</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 text-sm text-gray-light"
+                                            data-price="@item.PRECIO_UNITARIO.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture)">
+                                            @item.PRECIO_UNITARIO.ToString("C") 
+                                        </td>
+                                        <td class="px-6 py-4 text-sm text-gray-light">
+                                            <input type="hidden" name="idItem" value="@item.ID_ITEM">
+                                            <div class="flex w-24 items-center rounded-lg border border-gray-300">
+                                                <button type="button" class="decrease-qty h-8 w-8 text-gray-dark hover:bg-gray-light/30" data-item="@item.ID_ITEM">
+                                                    <i class="fas fa-minus"></i>
+                                                </button>
+                                                <input type="number" name="cantidad" value="@item.CANTIDAD" min="1" max="99" class="h-8 w-full border-none text-center focus:outline-none" data-item="@item.ID_ITEM">
+                                                <button type="button" class="increase-qty h-8 w-8 text-gray-dark hover:bg-gray-light/30" data-item="@item.ID_ITEM">
+                                                    <i class="fas fa-plus"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 text-sm font-medium text-gray-dark"
+                                            data-subtotal="@((item.CANTIDAD * item.PRECIO_UNITARIO).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture))">
+                                            @((item.CANTIDAD * item.PRECIO_UNITARIO).ToString("C"))
+                                        </td>
+                                        <td class="px-6 py-4 text-center text-sm">
+                                            <a href="@Url.Action("EliminarDelCarrito", new { idItem = item.ID_ITEM })" class="text-red-600 hover:text-red-900" onclick="return confirm('¿Está seguro que desea eliminar este producto del carrito?');">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot class="bg-gray-light/30">
+                                <tr>
+                                    <td colspan="3" class="px-6 py-4 text-right text-sm font-medium text-gray-light">
+                                        Total
+                                    </td>
+                                    <td class="px-6 py-4 text-sm font-bold text-gray-dark">
+                                        @total.ToString("C")
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <div class="mt-6 flex flex-col-reverse justify-between gap-4 border-t border-gray-200 pt-6 sm:flex-row sm:items-center">
+                        <div class="flex space-x-2">
+                            <a href="@Url.Action("Catalogo", "Home")" class="rounded-lg border border-gray-light/50 bg-white px-4 py-2 text-sm font-medium text-gray-dark shadow-sm transition hover:bg-gray-light/10">
+                                <i class="fas fa-shopping-basket mr-2"></i> Seguir comprando
+                            </a>
+                            <button type="submit" class="rounded-lg border border-brand-blue bg-white px-4 py-2 text-sm font-medium text-brand-blue shadow-sm transition hover:bg-brand-blue/10">
+                                <i class="fas fa-sync-alt mr-2"></i> Actualizar carrito
+                            </button>
+                        </div>
+                        <a href="@Url.Action("Checkout", "Home")" class="rounded-lg bg-brand-blue px-6 py-3 text-center font-medium text-white shadow-md transition hover:bg-brand-blue/90">
+                            <i class="fas fa-shopping-cart mr-2"></i> Proceder al pago
+                        </a>
+                    </div>
+                </form>
+            </div>
+        }
+    </div>
+
+    <!-- Políticas y información adicional -->
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <div class="overflow-hidden rounded-xl bg-white shadow-lg">
+            <div class="border-b border-gray-200 bg-gray-light/30 px-4 py-3">
+                <h3 class="font-bold text-gray-dark"><i class="fas fa-truck-loading mr-2 text-brand-blue"></i> Envío</h3>
+            </div>
+            <div class="p-4">
+                <p class="text-sm text-gray-light">Hacemos envíos a todas las provincias de Costa Rica. Los tiempos de entrega varían según la ubicación.</p>
+            </div>
+        </div>
+
+        <div class="overflow-hidden rounded-xl bg-white shadow-lg">
+            <div class="border-b border-gray-200 bg-gray-light/30 px-4 py-3">
+                <h3 class="font-bold text-gray-dark"><i class="fas fa-shield-alt mr-2 text-brand-blue"></i> Garantía</h3>
+            </div>
+            <div class="p-4">
+                <p class="text-sm text-gray-light">Todos nuestros productos cuentan con garantía directa del fabricante. Consulta los términos específicos de cada producto.</p>
+            </div>
+        </div>
+
+        <div class="overflow-hidden rounded-xl bg-white shadow-lg">
+            <div class="border-b border-gray-200 bg-gray-light/30 px-4 py-3">
+                <h3 class="font-bold text-gray-dark"><i class="fas fa-credit-card mr-2 text-brand-blue"></i> Pagos</h3>
+            </div>
+            <div class="p-4">
+                <p class="text-sm text-gray-light">Aceptamos diversas formas de pago: tarjetas de crédito/débito, transferencias bancarias y efectivo contra entrega.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            // Función para formatear como moneda (ej: 1399.98 → "₡1,399.98")
+            const formatCurrency = (amount) => {
+                return '₡' + amount.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            };
+
+            // Actualiza subtotal y total
+            const updateTotals = (itemId, newQuantity) => {
+                const row = $(`input[data-item="${itemId}"]`).closest('tr');
+                const price = parseFloat(row.find('[data-price]').data('price')); 
+                const subtotal = price * newQuantity;
+
+                // Actualiza subtotal en la fila
+                const subtotalCell = row.find('[data-subtotal]');
+                subtotalCell.data('subtotal', subtotal);
+                subtotalCell.text(formatCurrency(subtotal));
+
+                // Recalcula el TOTAL general
+                let newTotal = 0;
+                $('tbody tr').each(function() {
+                    newTotal += parseFloat($(this).find('[data-subtotal]').data('subtotal'));
+                });
+
+                $('tfoot td:nth-child(2)').text(formatCurrency(newTotal));
+            };
+
+            // Eventos para botones +/-
+            $('.decrease-qty, .increase-qty').click(function() {
+                const itemId = $(this).data('item');
+                const input = $(`input[data-item="${itemId}"]`);
+                let currentValue = parseInt(input.val());
+
+                if ($(this).hasClass('decrease-qty') && currentValue > 1) {
+                    input.val(--currentValue);
+                } else if ($(this).hasClass('increase-qty') && currentValue < 99) {
+                    input.val(++currentValue);
+                }
+
+                updateTotals(itemId, currentValue);
+            });
+
+            // Cambio manual en el input
+            $('input[name="cantidad"]').on('input', function() {
+                const itemId = $(this).data('item');
+                let newValue = parseInt($(this).val()) || 1;
+                newValue = Math.min(Math.max(newValue, 1), 99); // Limita entre 1 y 99
+                $(this).val(newValue);
+                updateTotals(itemId, newValue);
+            });
+        });
+    </script>
+}
